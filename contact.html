@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Syne', sans-serif; }
+    .mono { font-family: 'Share Tech Mono', monospace; }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(0,255,200,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,200,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp .7s ease both; }
+    .d1 { animation-delay: .1s; }
+    .d2 { animation-delay: .2s; }
+    .d3 { animation-delay: .3s; }
+
+    input, textarea {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color .2s;
+      resize: none;
+    }
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.2);
+    }
+    input:focus, textarea:focus {
+      border-color: rgba(0,255,200,0.4);
+    }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen grid-bg flex flex-col relative px-6 py-16">
+
+  <span class="absolute top-6 left-6 w-5 h-5 border-t border-l border-teal-400/30"></span>
+  <span class="absolute top-6 right-6 w-5 h-5 border-t border-r border-teal-400/30"></span>
+  <span class="absolute bottom-6 left-6 w-5 h-5 border-b border-l border-teal-400/30"></span>
+  <span class="absolute bottom-6 right-6 w-5 h-5 border-b border-r border-teal-400/30"></span>
+
+  <!-- nav -->
+  <nav class="flex items-center justify-between mb-20 fade-up">
+    <a href="index.html" class="mono text-[10px] text-white/30 hover:text-teal-400 tracking-widest uppercase transition-colors">← Home</a>
+    <div class="flex gap-5">
+      <a href="about.html" class="mono text-[10px] text-white/25 hover:text-teal-400 tracking-widest uppercase transition-colors">About</a>
+      <span class="mono text-[10px] text-teal-400 tracking-widest uppercase">Contact</span>
+    </div>
+  </nav>
+
+  <!-- main -->
+  <main class="max-w-xl mx-auto w-full flex-1">
+    <p class="mono text-[10px] text-teal-400/60 tracking-[.3em] uppercase mb-4 fade-up d1">// contact</p>
+
+    <h1 class="font-bold text-4xl tracking-tight mb-3 fade-up d1">
+      Say <span class="text-teal-400">hello!</span>
+    </h1>
+
+    <div class="w-8 h-px bg-teal-400/40 mb-8 fade-up d2"></div>
+
+    <p class="text-white/40 text-[14px] leading-relaxed mb-10 fade-up d2">
+      Have something to say? Drop a message and I'll get back to you ASAP
+    </p>
+
+    <!-- form -->
+    <form class="flex flex-col gap-4 fade-up d3" id="contactForm">
+      <input type="text" placeholder="Name" id="name" required />
+      <input type="email" placeholder="Email" id="email" required />
+      <textarea rows="5" placeholder="Message" id="message" required></textarea>
+
+      <button type="submit"
+        class="mono text-[11px] tracking-widest uppercase text-teal-400 border border-teal-400/30 px-6 py-3 hover:bg-teal-400/10 hover:border-teal-400/60 transition-all self-start mt-1">
+        Send →
+      </button>
+    </form>
+
+    <p id="successMsg" class="mono text-[11px] text-teal-400 tracking-wider mt-6 hidden">// message sent. talk soon.</p>
+
+    <!-- direct links -->
+    <div class="mt-12 pt-8 border-t border-white/5 flex flex-col gap-3">
+      <a href="mailto:sandeep@nau80yal.in" class="mono text-[11px] text-white/25 hover:text-teal-400 tracking-wider transition-colors">
+        → sandeep@nau80yal.in
+      </a>
+      <a href="https://linkedin.com/in/sandeepnau80yal" target="_blank" class="mono text-[11px] text-white/25 hover:text-teal-400 tracking-wider transition-colors">
+        → linkedin.com/in/sandeepnau80yal
+      </a>
+      <a href="https://github.com/sandeepnau80yal" target="_blank" class="mono text-[11px] text-white/25 hover:text-teal-400 tracking-wider transition-colors">
+        → github.com/sandeepnau80yal
+      </a>
+    </div>
+  </main>
+
+  <p class="mono text-[9px] text-white/10 tracking-wider text-center mt-12">© 2026</p>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.opacity = '0.3';
+      document.getElementById('successMsg').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
