@@ -46,10 +46,42 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
+  const handleSubmit = async (e) => {
+  e.preventDefault()
+
+  try {
+    const response = await fetch(`https://formspree.io/f/${import.meta.env.VITE_YOUR_FORM_ID}`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      message: form.message,
+      _subject: `Portfolio Contact from ${form.name}`,
+    }),
   }
+)
+
+    if (response.ok) {
+      setSubmitted(true)
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      })
+    } else {
+      alert("Failed to send message.")
+    }
+  } catch (error) {
+    console.error(error)
+    alert("Something went wrong.")
+  }
+}
 
   const handleChange = (field) => (e) => {
     setForm({ ...form, [field]: e.target.value })
