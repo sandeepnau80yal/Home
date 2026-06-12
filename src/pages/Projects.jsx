@@ -22,7 +22,7 @@ const projects = [
     description: 'Ephemeral chat rooms that vanish when empty. No backend persistence — privacy by design.',
     tags: ['React', 'Node', 'Socket.io',],
     github: 'https://github.com/sandeepnau80yal/AbyssChat',
-    live:"https://abyss-chat.vercel.app/"
+    live:"https://abyss.nau80yal.in/"
   },
   {
     id: 'mc-ec2',
@@ -50,7 +50,7 @@ const projects = [
     description: 'Epub reader built vanilla. React + Pretext rebuild in progress.',
     tags: ['JavaScript', 'epub.js'],
     github: 'https://github.com/sandeepnau80yal/OrynReader',
-    live:"https://oryn-reader.vercel.app/"
+    live:"https://orynreader.nau80yal.in/"
   },
 ]
 const ProjectCard = ({ project }) => (
