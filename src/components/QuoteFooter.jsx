@@ -26,7 +26,7 @@ const QuoteFooter = ({ absolute = false }) => {
 
   return (
     <div className={absolute 
-      ? "absolute bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap" 
+      ? "absolute bottom-7 left-0 right-0 px-6" 
       : "mt-auto pt-8"
     }>
       <p className="mono text-[9px] text-teal-400 tracking-wider text-center">
