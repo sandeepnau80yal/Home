@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nau80yal.in/sitemap.xml
