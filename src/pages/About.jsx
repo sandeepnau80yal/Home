@@ -1,61 +1,40 @@
 import { SocialLinks } from '../components/SocialLinks'
-import CornerBrackets from '../components/CornerBrackets'
-import QuoteFooter from '../components/QuoteFooter'
-import Nav from '../components/Nav'
 
+const skills = ['Development', 'Cloud', 'DevOps', 'Linux']
 
-const SkillTag = ({ name }) => {
-  return (
-    <span className="mono text-[10px] text-teal-400/60 border border-teal-400/15 px-3 py-1 tracking-wider">
-      {name}
-    </span>
-  )
-}
+const About = () => (
+  <div className="page-shell content-shell">
+    <header className="section-heading">
+      <p className="section-kicker">01 / About</p>
+      <h2>A little context.<br /><span>Built by doing.</span></h2>
+      <p className="section-intro">React and Socket.io chat rooms, a Pygame raycaster, an EPUB reader, and a Minecraft server tuned for ten players.</p>
+    </header>
 
-const About = () => {
-  return (
-    <div className="bg-black text-white min-h-screen relative grid-bg flex flex-col px-6 py-16">
-      <CornerBrackets />
-      <Nav active="About"/>
-      <main className="max-w-xl mx-auto w-full flex-1">
-        <p className="mono text-[10px] text-teal-400/60 tracking-[.3em] uppercase mb-4">// about</p>
-        <h1 className="font-bold text-4xl tracking-tight mb-8">
-          Hello <span className="text-teal-400">;)</span>
-        </h1>
-        <h2 className="font-bold text-2xl tracking-tight mb-8">
-          Sandeep here <span className="text-teal-400">!!</span>
-        </h2>
-        <div className="w-8 h-px bg-teal-400/40 mb-8"></div>
-        <p className="text-white/55 text-[15px] leading-relaxed mb-5">
-          Hi — I'm Sandeep, a developer based in Gurgaon. Tinkering with many technologies at 
-          once and learning along the way, be it Automating Pipelines, gliding with cloud, creating game
-          engines from scratch
-        </p>
-        <p className="text-white/55 text-[15px] leading-relaxed mb-5">
-          Wondering about the 80 in "nau80yal"? It's a little nod to port 80. I believe my hands craft the 
-          ideas i have through the codes just like the port 80 connects the web servers to the client ;)
-        </p>
-        <p className="text-white/55 text-[15px] leading-relaxed mb-5">
-          I am still way off from being the best but i ain't stopping anytime sooner,
-          and challenges are what i'm up for!!!
-        </p>
-        <p className="text-white/55 text-[15px] leading-relaxed mb-5">
-          As the saying goes like 
-        </p>
-        <p className="text-white text-[15px] leading-relaxed mb-5">
-          <b><i>"Jack of all trades, master of none, still better than master of one!"</i></b>
-        </p>
-        <div className="flex flex-wrap gap-2 mb-12">
-          <SkillTag name="Development" />
-          <SkillTag name="Cloud" />
-          <SkillTag name="DevOps" />
-          <SkillTag name="Linux" />
+    <div className="about-layout">
+      <article className="surface-card about-story">
+        <p className="eyebrow">The short version</p>
+        <p className="about-lede">Hi, I’m Sandeep, a developer based in Gurgaon. AbyssChat uses React, Node, Express, and Socket.io for rooms that disappear when they’re empty. SayCaster is a Pygame raycaster built with custom vector math and fisheye correction.</p>
+        <p>I also built OrynReader as a vanilla JavaScript EPUB reader, and set up a modded Minecraft server on AWS EC2 for ten concurrent players. I learn new tools by putting them to work in projects like these.</p>
+        <p>The “80” in nau80yal is a nod to port 80 — a small reminder that the things I make are meant to connect ideas with people.</p>
+        <blockquote>“Jack of all trades, master of none, still better than master of one.”</blockquote>
+      </article>
+
+      <aside className="about-sidebar">
+        <div className="surface-card about-facts">
+          <p className="eyebrow">What I work with</p>
+          <div className="skill-list">
+            {skills.map((skill, index) => <span className="skill-chip" key={skill}><span>0{index + 1}</span>{skill}</span>)}
+          </div>
+          <a className="about-resume-link" href="/Sandeep%20Nautiyal%20-%20Resume.pdf" download="Sandeep-Nautiyal-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a>
         </div>
-        <SocialLinks />
-      </main>
-      <QuoteFooter />
+        <div className="surface-card about-connect">
+          <p className="eyebrow">On the internet</p>
+          <p>Open to ideas, collaborations, and good conversations.</p>
+          <SocialLinks />
+        </div>
+      </aside>
     </div>
-  )
-}
+  </div>
+)
 
 export default About

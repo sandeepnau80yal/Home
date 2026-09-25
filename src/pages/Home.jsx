@@ -1,42 +1,50 @@
-import { SocialLinks } from "../components/SocialLinks"
-import CornerBrackets from "../components/CornerBrackets"
-import QuoteFooter from '../components/QuoteFooter'
-import Nav from '../components/Nav'
+import { SocialLinks } from '../components/SocialLinks'
 
-function StatusBar() {
-  return (
-    <p className="mono absolute top-7 left-1/2 -translate-x-1/2 text-[10px] text-teal-400/50 tracking-widest uppercase whitespace-nowrap">
-      <span className="inline-block w-[5px] h-[5px] rounded-full bg-teal-400 mr-2 pulse align-middle"></span>
-      initializing<span className="blink">_</span>
-    </p>
-  )
-}
-
-
-function HeroContent() {
-  return (
-    <div className="text-center flex flex-col items-center">
-      <p className="mono text-[30px] text-teal-400/70 tracking-[.3em] uppercase mb-4">Welcome to my abode</p>
-      <div className="w-10 h-px bg-teal-400/40 my-6"></div>
-      <p className="mono text-[11px] text-white/25 tracking-[.2em] uppercase mb-8"> Tech ain't tech if it ain't fun. </p>
-      <SocialLinks />
+const Home = () => (
+  <div className="page-shell home-shell">
+    <div className="home-meta">
+      <span className="eyebrow"><span className="status-dot" /> Independent developer</span>
+      <span className="home-location">Gurgaon</span>
     </div>
-  )
-}
 
-
-const Home = () => {
-  return (
-    <div className="bg-black text-white min-h-screen relative grid-bg flex flex-col px-6 py-16">
-      <CornerBrackets />
-      <StatusBar />
-      <Nav active="Home" />
-      <div className="flex-1 flex flex-col items-center justify-center">
-        <HeroContent />
+    <div className="hero-grid">
+      <div className="hero-copy-block">
+        <p className="section-kicker">React · Node.js · Python · AWS</p>
+        <h1 className="hero-title">
+          I build things<br />
+          <span className="hero-title__second-line">for the open web.</span>
+        </h1>
+        <p className="hero-description">
+          Hey, I’m Sandeep. I’ve built ephemeral chat rooms, a raycasting engine in Pygame, an EPUB reader, and a modded Minecraft server on AWS.
+        </p>
+        <div className="hero-actions">
+          <a className="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a className="button button-quiet" href="#about">A little about me <span aria-hidden="true">↓</span></a>
+          <a className="button button-quiet" href="/Sandeep%20Nautiyal%20-%20Resume.pdf" download="Sandeep-Nautiyal-Resume.pdf">Resume <span aria-hidden="true">↓</span></a>
+        </div>
+        <div className="hero-socials">
+          <span className="eyebrow">Find me elsewhere</span>
+          <SocialLinks />
+        </div>
       </div>
-      <QuoteFooter absolute />
+
+      <aside className="hero-aside" aria-label="Developer focus">
+        <div className="hero-orbit" aria-hidden="true"><span /><span /><span /></div>
+        <div className="focus-card">
+          <div className="focus-card__top"><span className="eyebrow">Software developer</span><span className="focus-index">Gurgaon</span></div>
+          <div className="profile-avatar">
+            <img src="/Profile.jpg" alt="Sandeep Nau80yal" />
+          </div>
+          <div className="focus-card__bottom">
+            <div><span className="eyebrow">Currently exploring</span><p>Cloud infrastructure<br />&amp; developer tools</p></div>
+          </div>
+        </div>
+        <p className="hero-aside-note"><span className="status-dot" /> Recent builds: web apps, tools, and game experiments.</p>
+      </aside>
     </div>
-  )
-}
+
+    <div className="home-bottomline"><span>Scroll to explore</span><span className="bottomline-rule" /><span>Home — Contact</span></div>
+  </div>
+)
 
 export default Home

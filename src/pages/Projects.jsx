@@ -1,141 +1,114 @@
-import CornerBrackets from '../components/CornerBrackets'
-import QuoteFooter from '../components/QuoteFooter'
-import { Link } from 'react-router-dom'
-
-const Nav = () => (
-  <nav className="flex items-center justify-between mb-20">
-    <Link to="/" className="mono text-[10px] text-white/30 hover:text-teal-400 tracking-widest uppercase transition-colors">← Home</Link>
-    <div className="flex gap-5">
-      <Link to="/about" className="mono text-[10px] text-white/25 hover:text-teal-400 tracking-widest uppercase transition-colors">About</Link>
-      <span className="mono text-[10px] text-teal-400 tracking-widest uppercase">Projects</span>
-      <Link to="/contact" className="mono text-[10px] text-white/25 hover:text-teal-400 tracking-widest uppercase transition-colors">Contact</Link>
-    </div>
-  </nav>
-)
-
 const projects = [
   {
     id: 'abyss-chat',
     label: '01',
     name: 'AbyssChat',
-    stack: 'MERN Stack',
+    stack: 'MERN / REAL-TIME',
     description: 'Ephemeral chat rooms that vanish when empty. No backend persistence — privacy by design.',
-    tags: ['React', 'Node', 'Socket.io',],
+    tags: ['React', 'Node.js', 'Express', 'Socket.io'],
     github: 'https://github.com/sandeepnau80yal/AbyssChat',
-    live:"https://abyss.nau80yal.in/"
+    live: 'https://abyss.nau80yal.in/',
   },
   {
     id: 'mc-ec2',
     label: '02',
     name: 'Minecraft EC2',
-    stack: 'AWS EC2',
-    description: 'Self-hosted Minecraft server on AWS EC2. Configured for 10 concurrent players with mods and server tuning.',
-    tags: ['AWS', 'Linux', 'DevOps'],
-    github:"",
+    stack: 'AWS / EC2',
+    description: 'A self-hosted Minecraft server on AWS, configured for ten concurrent players with mods and server tuning.',
+    tags: ['AWS', 'Linux', 'EC2', 'DevOps'],
+    github: '',
   },
   {
     id: 'saycaster',
     label: '03',
     name: 'SayCaster',
-    stack: 'Python / PyGame',
-    description: 'Pseudo-3D raycasting engine. Custom vector math, trig-based rendering and fisheye correction — no DDA.',
-    tags: ['Python', 'PyGame', 'Math'],
+    stack: 'PYTHON / PYGAME',
+    description: 'A pseudo-3D raycasting engine built with custom vector math, trigonometric rendering, and fisheye correction.',
+    tags: ['Python', 'PyGame', 'Vector Math'],
     github: 'https://github.com/sandeepnau80yal/SayCaster',
   },
   {
     id: 'oryn-reader',
     label: '04',
     name: 'OrynReader',
-    stack: 'HTML / CSS / JS',
-    description: 'Epub reader built vanilla. React + Pretext rebuild in progress.',
-    tags: ['JavaScript', 'epub.js'],
+    stack: 'JAVASCRIPT / EPUB',
+    description: 'A lightweight EPUB reader built in vanilla JavaScript, with a React + Pretext rebuild in progress.',
+    tags: ['JavaScript', 'epub.js', 'React'],
     github: 'https://github.com/sandeepnau80yal/OrynReader',
-    live:"https://orynreader.nau80yal.in/"
+    live: 'https://orynreader.nau80yal.in/',
   },
 ]
-const ProjectCard = ({ project }) => (
-  <div className="relative border border-white/8 p-6 hover:border-teal-400/30 transition-all group">
-    <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-teal-400/20 group-hover:border-teal-400/60 transition-colors"></div>
-    <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-teal-400/20 group-hover:border-teal-400/60 transition-colors"></div>
 
-    <div className="flex items-start justify-between mb-4">
-      <span className="mono text-[10px] text-teal-400/40 tracking-widest">
-        {project.label}
-      </span>
-      <span className="mono text-[10px] text-white/20 tracking-wider">
-        {project.stack}
-      </span>
-    </div>
-
-    <h2 className="font-bold text-xl tracking-tight mb-3 group-hover:text-teal-400 transition-colors">
-      {project.name}
-    </h2>
-
-    <p className="text-white/40 text-[13px] leading-relaxed mb-5">
-      {project.description}
-    </p>
-
-    <div className="flex items-center justify-between">
-      <div className="flex flex-wrap gap-2">
-        {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="mono text-[9px] text-teal-400/50 border border-teal-400/15 px-2 py-1 tracking-wider"
-          >
-            {tag}
-          </span>
-        ))}
+const ProjectPreview = ({ projectId }) => {
+  if (projectId === 'abyss-chat') {
+    return (
+      <div className="project-preview preview-chat" role="img" aria-label="Concept preview of the AbyssChat room interface">
+        <div className="preview-window-bar"><i /><i /><i /><span>abyss / room-08</span></div>
+        <div className="chat-preview-body"><div className="chat-rail"><b /><b /><b /><b /></div><div className="chat-messages"><span className="chat-line chat-line--short" /><span className="chat-line" /><span className="chat-line chat-line--right" /><span className="chat-line chat-line--short" /><span className="chat-input" /></div></div>
       </div>
+    )
+  }
 
-      {(project.live || project.github) && (
-        <div className="flex items-center gap-4">
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mono text-[10px] text-white/25 hover:text-teal-400 tracking-widest uppercase transition-colors"
-            >
-              Live →
-            </a>
-          )}
+  if (projectId === 'mc-ec2') {
+    return (
+      <div className="project-preview preview-cloud" role="img" aria-label="Concept diagram of a Minecraft server running on an EC2 instance">
+        <span className="cloud-node cloud-node--client">PLAYERS <b>10</b></span><span className="cloud-connector" />
+        <span className="cloud-node cloud-node--server"><i>◆</i><b>EC2 INSTANCE</b><small>MINECRAFT · MODDED</small></span>
+        <span className="cloud-region">AWS / EC2</span>
+      </div>
+    )
+  }
 
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mono text-[10px] text-white/25 hover:text-teal-400 tracking-widest uppercase transition-colors"
-            >
-              GitHub →
-            </a>
-          )}
-        </div>
-      )}
+  if (projectId === 'saycaster') {
+    return (
+      <div className="project-preview preview-raycast" role="img" aria-label="Stylized raycast corridor preview for SayCaster">
+        <svg viewBox="0 0 480 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="ray-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#10231e" /><stop offset="1" stopColor="#050807" /></linearGradient><linearGradient id="ray-glow" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#10231e" /><stop offset=".5" stopColor="#2bd0a9" stopOpacity=".5" /><stop offset="1" stopColor="#10231e" /></linearGradient></defs>
+          <rect width="480" height="180" fill="url(#ray-bg)" /><path d="M0 0h480v45H0z" fill="#0a1512" /><path d="M0 45 180 82v98H0zm480 0L300 82v98h180z" fill="#0a1713" stroke="#1b6e5b" strokeOpacity=".65" /><path d="M180 82h120v98H180z" fill="url(#ray-glow)" stroke="#51e8c5" strokeOpacity=".65" /><path d="M0 180 180 82m300 98L300 82M0 135h480M0 105h480M0 83h480" stroke="#35b998" strokeOpacity=".35" /><path d="M60 0v180m60-180v180m300-180v180m-60-180v180" stroke="#35b998" strokeOpacity=".2" />
+        </svg>
+        <span className="raycast-label">SAYCASTER <i>— LEVEL 01</i></span>
+      </div>
+    )
+  }
+
+  return (
+    <div className="project-preview preview-reader" role="img" aria-label="Concept preview of the OrynReader ebook interface">
+      <div className="reader-sidebar"><b>ORYN</b><span /><span /><span /><span /></div>
+      <div className="reader-page"><small>CHAPTER 04</small><b>Stories live<br />between the lines.</b><i /><i /><i /><i /><i /></div>
+      <span className="reader-page-number">042</span>
     </div>
-  </div>
+  )
+}
+
+const ProjectCard = ({ project }) => (
+  <article className="project-card">
+    <div className="project-card__meta"><span className="project-number">PROJECT / {project.label}</span><span className="project-stack">{project.stack}</span></div>
+    <h3>{project.name}</h3>
+    <p className="project-description">{project.description}</p>
+    <ProjectPreview projectId={project.id} />
+    <div className="project-card__footer">
+      <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+      <div className="project-links">
+        {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">Live site ↗</a>}
+        {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer">Source ↗</a>}
+        {project.id === 'mc-ec2' && (
+          <details className="project-details">
+            <summary>Server notes <span aria-hidden="true">＋</span></summary>
+            <p>Self-hosted on AWS EC2 and configured for ten concurrent players, with mods and server tuning.</p>
+          </details>
+        )}
+      </div>
+    </div>
+  </article>
 )
 
 const Projects = () => (
-  <div className="bg-black text-white min-h-screen relative grid-bg flex flex-col px-6 py-16">
-    <CornerBrackets />
-    <Nav />
-    <main className="max-w-2xl mx-auto w-full flex-1">
-      <p className="mono text-[10px] text-teal-400/60 tracking-[.3em] uppercase mb-4">// projects</p>
-      <h1 className="font-bold text-4xl tracking-tight mb-3">
-        Things I've <span className="text-teal-400">built.</span>
-      </h1>
-      <div className="w-8 h-px bg-teal-400/40 mb-12"></div>
-
-      <div className="flex flex-col gap-4">
-        {projects.map(project => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-    </main>
-    <div>
-        <QuoteFooter/>
-    </div>
+  <div className="page-shell content-shell projects-shell">
+    <header className="section-heading section-heading--row">
+      <div><p className="section-kicker">02 / Selected work</p><h2>Ideas,<br /><span>made real.</span></h2></div>
+      <p className="section-intro">A few things I’ve built, learned from, and continue to improve.</p>
+    </header>
+    <div className="projects-grid">{projects.map((project) => <ProjectCard key={project.id} project={project} />)}</div>
   </div>
 )
 
