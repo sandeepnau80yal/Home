@@ -9,6 +9,7 @@ const projects = [
     github: 'https://github.com/sandeepnau80yal/AbyssChat',
     live: 'https://abyss.nau80yal.in/',
   },
+
   {
     id: 'mc-ec2',
     label: '02',
@@ -18,6 +19,7 @@ const projects = [
     tags: ['AWS', 'Linux', 'EC2', 'DevOps'],
     github: '',
   },
+
   {
     id: 'saycaster',
     label: '03',
@@ -27,6 +29,7 @@ const projects = [
     tags: ['Python', 'PyGame', 'Vector Math'],
     github: 'https://github.com/sandeepnau80yal/SayCaster',
   },
+
   {
     id: 'oryn-reader',
     label: '04',
@@ -35,7 +38,7 @@ const projects = [
     description: 'A lightweight EPUB reader built in vanilla JavaScript, with a React + Pretext rebuild in progress.',
     tags: ['JavaScript', 'epub.js', 'React'],
     github: 'https://github.com/sandeepnau80yal/OrynReader',
-    live: 'https://orynreader.nau80yal.in/',
+    live: 'https://oryn.nau80yal.in/',
   },
 ]
 
