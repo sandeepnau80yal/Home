@@ -3,13 +3,13 @@ import { SocialLinks } from '../components/SocialLinks'
 const Home = () => (
   <div className="page-shell home-shell">
     <div className="home-meta">
-      <span className="eyebrow"><span className="status-dot" /> Independent developer</span>
+      <span className="eyebrow"><span className="status-dot" /> Developer</span>
       <span className="home-location">Gurgaon</span>
     </div>
 
     <div className="hero-grid">
       <div className="hero-copy-block">
-        <p className="section-kicker">React · Node.js · Python · AWS</p>
+        <p className="section-kicker">MERN - C++ - Python - AWS/GCP </p>
         <h1 className="hero-title">
           I build things<br />
           <span className="hero-title__second-line">for the open web.</span>
@@ -31,19 +31,18 @@ const Home = () => (
       <aside className="hero-aside" aria-label="Developer focus">
         <div className="hero-orbit" aria-hidden="true"><span /><span /><span /></div>
         <div className="focus-card">
-          <div className="focus-card__top"><span className="eyebrow">Software developer</span><span className="focus-index">Gurgaon</span></div>
           <div className="profile-avatar">
             <img src="/Profile.jpg" alt="Sandeep Nau80yal" />
           </div>
           <div className="focus-card__bottom">
-            <div><span className="eyebrow">Currently exploring</span><p>Cloud infrastructure<br />&amp; developer tools</p></div>
+            <div><span className="eyebrow">Currently exploring</span><p>Cloud infrastructure<br /> Developer tools<br/> &amp; AI Integration</p></div>
           </div>
         </div>
-        <p className="hero-aside-note"><span className="status-dot" /> Recent builds: web apps, tools, and game experiments.</p>
+        <p className="hero-aside-note"><span className="status-dot" /> To be honest, I juggle with a lot of technologies and stacks at once ;) </p>
       </aside>
     </div>
 
-    <div className="home-bottomline"><span>Scroll to explore</span><span className="bottomline-rule" /><span>Home — Contact</span></div>
+    <div className="home-bottomline"><span className="bottomline-rule" /><span>Scroll to explore</span><span className="bottomline-rule" /></div>
   </div>
 )
 

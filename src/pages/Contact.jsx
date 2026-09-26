@@ -35,7 +35,7 @@ const Contact = () => {
     <div className="page-shell content-shell contact-shell">
       <header className="section-heading">
         <p className="section-kicker">03 / Get in touch</p>
-        <h2>Have an idea?<br /><span>Let’s talk.</span></h2>
+        <h2>You got something?<br /><span>Let’s talk!</span></h2>
         <p className="section-intro">Have something to say, or something interesting to build? I’d be glad to hear from you.</p>
       </header>
 
@@ -44,9 +44,9 @@ const Contact = () => {
           <p className="eyebrow">Direct line</p>
           <a className="contact-email" href="mailto:sandeep@nau80yal.in">sandeep@nau80yal.in <span aria-hidden="true">↗</span></a>
           <div className="contact-rule" />
-          <p className="eyebrow">Elsewhere</p>
+          <p className="eyebrow">Connect over</p> <br/>
           <SocialLinks />
-          <p className="contact-note"><span className="status-dot" /> A useful first note: what you’re building, what you’ve tried, and where you’re stuck.</p>
+          <p className="contact-note"><span className="status-dot" /> Tech ain't tech if it ain't fun. Cheers!</p>
         </aside>
 
         <div className="surface-card contact-form-card">
