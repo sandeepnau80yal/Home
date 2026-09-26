@@ -18,6 +18,10 @@ const movieQuotes = [
   'Sometimes the truth is the most dangerous thing of all — Martin Vail, Primal Fear',
   "Hope is not naïve. It's a choice — Superman",
   'Money is iron. It can be anything you want it to be — Ki-taek, Parasite',
+  'Has anything you’ve done made your life better? — Bob Sweeney, American History X',
+  'Why you pursue something is as important as what you pursue. — Lou Bloom, Nightcrawler',
+  'Revenge is never a straight line. It’s a forest. — Hattori Hanzo, Kill Bill',
+  'How can you wake up from a nightmare if you are not asleep? — Trevor Reznik, The Machinist'
 ]
 
 const SiteFooter = () => {
